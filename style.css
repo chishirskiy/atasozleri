@@ -155,3 +155,60 @@ h1 {
     color: #d5defa;
     line-height: 1.8;
 }
+.text {
+    margin: 20px 0;
+    line-height: 1.9;
+    color: #f3f5ff;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    color: #9fb6ff;
+    font-size: .9rem;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.reflection-btn {
+    margin-top: 25px;
+    border: none;
+    cursor: pointer;
+    padding: 14px 22px;
+    border-radius: 12px;
+    background: #2d5cff;
+    color: white;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.reflection-btn:hover {
+    background: #4774ff;
+    transform: translateY(-2px);
+}
+
+.reflection {
+    max-height: 0;
+    overflow: hidden;
+    transition: .4s;
+    margin-top: 0;
+    color: #d6e2ff;
+    line-height: 1.8;
+}
+
+.reflection.open {
+    max-height: 300px;
+    margin-top: 20px;
+}
+
+.quote-card {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.quote-card.show {
+    opacity: 1;
+    transform: translateY(0);
+    transition: .6s;
+}
