@@ -1,1 +1,133 @@
-body{background:#0f172a;color:#fff} .card{background:#1e293b;color:#fff}
+/* ===========================
+   ОСНОВА
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root{
+    --bg:#0f172a;
+    --bg2:#1e293b;
+    --card:rgba(30,41,59,.75);
+    --text:#f8fafc;
+    --muted:#cbd5e1;
+    --blue:#3b82f6;
+    --gold:#facc15;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Poppins,sans-serif;
+    background:
+        radial-gradient(circle at top,#1e3a8a 0%,#0f172a 40%,#020617 100%);
+    color:var(--text);
+    min-height:100vh;
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:40px 20px;
+}
+
+.hero h1{
+    font-size:4rem;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:1.3rem;
+    color:var(--muted);
+    max-width:700px;
+    margin:auto;
+    margin-bottom:40px;
+}
+
+.display-1{
+    animation:float 4s ease-in-out infinite;
+}
+
+/* ===========================
+   КНОПКИ
+=========================== */
+
+.btn-primary{
+    background:var(--blue);
+    border:none;
+    border-radius:14px;
+    padding:14px 40px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 25px rgba(59,130,246,.45);
+}
+
+.btn-success{
+    border-radius:12px;
+}
+
+/* ===========================
+   КАРТОЧКИ
+=========================== */
+
+.card{
+    background:var(--card);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    color:white;
+    transition:.35s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+}
+
+.card h2,
+.card h4{
+    color:white;
+}
+
+/* ===========================
+   ПОСВЯЩЕНИЕ
+=========================== */
+
+.dedication{
+    border-left:5px solid var(--gold);
+}
+
+/* ===========================
+   АНИМАЦИИ
+=========================== */
+
+@keyframes float{
+
+0%,100%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-10px);
+}
+
+}
