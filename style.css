@@ -131,3 +131,122 @@ transform:translateY(-10px);
 }
 
 }
+/* ===========================
+   ПОИСК
+=========================== */
+
+.form-control{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.12);
+    color:#fff;
+    border-radius:14px;
+    padding:14px 18px;
+}
+
+.form-control:focus{
+    background:rgba(255,255,255,.12);
+    color:#fff;
+    border-color:var(--blue);
+    box-shadow:0 0 20px rgba(59,130,246,.25);
+}
+
+.form-control::placeholder{
+    color:#b8c2d1;
+}
+
+/* ===========================
+   BADGES
+=========================== */
+
+.badge{
+    padding:10px 16px;
+    border-radius:12px;
+    font-weight:600;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+    margin-top:80px;
+    color:#94a3b8;
+    border-top:1px solid rgba(255,255,255,.08);
+    background:rgba(255,255,255,.02);
+}
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#111827;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#3b82f6;
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#60a5fa;
+}
+
+/* ===========================
+   АНИМАЦИЯ КАРТОЧЕК
+=========================== */
+
+.card{
+    animation:fadeUp .6s ease;
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* ===========================
+   АДАПТАЦИЯ
+=========================== */
+
+@media(max-width:768px){
+
+    .hero{
+        min-height:80vh;
+        padding:60px 20px;
+    }
+
+    .hero h1{
+        font-size:2.4rem;
+    }
+
+    .hero p{
+        font-size:1rem;
+    }
+
+    .display-1{
+        font-size:4rem;
+    }
+
+    .btn-lg{
+        width:100%;
+    }
+
+    .card-body{
+        padding:22px !important;
+    }
+
+}
