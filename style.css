@@ -1,75 +1,157 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-
-background:#0b0b0b;
-color:white;
-padding:40px;
-
+html {
+    scroll-behavior: smooth;
 }
 
-header{
-
-text-align:center;
-margin-bottom:60px;
-
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #0b1020, #151d3a, #0b1020);
+    color: white;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
-h1{
-
-font-size:55px;
-
-margin-bottom:20px;
-
+/* Фон */
+.background {
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(0,180,255,.18), transparent 35%),
+        radial-gradient(circle at 80% 10%, rgba(90,0,255,.15), transparent 40%),
+        radial-gradient(circle at 50% 80%, rgba(0,120,255,.12), transparent 35%);
+    animation: backgroundMove 15s ease-in-out infinite alternate;
+    z-index: -1;
 }
 
-.subtitle{
-
-font-size:22px;
-opacity:.8;
-
+@keyframes backgroundMove {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.08);
+    }
 }
 
-.message{
-
-max-width:900px;
-margin:auto;
-margin-bottom:60px;
-
-line-height:1.8;
-
-font-size:20px;
-
+/* Первый экран */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
 }
 
-#quotes{
-
-display:grid;
-gap:20px;
-
+.hero-content {
+    max-width: 900px;
 }
 
-.quote{
-
-background:#181818;
-
-padding:25px;
-
-border-radius:15px;
-
-transition:.3s;
-
+.logo {
+    font-size: 90px;
+    margin-bottom: 20px;
+    animation: float 3s ease-in-out infinite;
 }
 
-.quote:hover{
+@keyframes float {
+    0%,100% {
+        transform: translateY(0);
+    }
 
-transform:translateY(-5px);
+    50% {
+        transform: translateY(-12px);
+    }
+}
 
-background:#232323;
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    margin-bottom: 25px;
+}
 
+.quote {
+    font-size: 1.35rem;
+    color: #d5defa;
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+.button {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    padding: 16px 38px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #3275ff, #5b5cff);
+    transition: .3s;
+    font-weight: bold;
+}
+
+.button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(80,130,255,.35);
+}
+
+/* Посвящение */
+.intro {
+    width: min(900px, 90%);
+    margin: 80px auto;
+    padding: 40px;
+    background: rgba(255,255,255,.08);
+    backdrop-filter: blur(14px);
+    border-radius: 22px;
+    border: 1px solid rgba(255,255,255,.12);
+}
+
+.intro h2 {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.intro p {
+    font-size: 1.15rem;
+    line-height: 2;
+    text-align: center;
+}
+
+/* Книга */
+#book {
+    width: min(1100px, 92%);
+    margin: 80px auto;
+}
+
+#book h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#quotes {
+    display: grid;
+    gap: 25px;
+}
+
+.quote-card {
+    background: rgba(255,255,255,.08);
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid rgba(255,255,255,.12);
+    backdrop-filter: blur(10px);
+    transition: .3s;
+}
+
+.quote-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(90,160,255,.5);
+}
+
+.quote-card h3 {
+    margin-bottom: 15px;
+}
+
+.quote-card p {
+    color: #d5defa;
+    line-height: 1.8;
 }
