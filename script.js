@@ -7,7 +7,7 @@ fetch("quotes.json")
         const search = document.getElementById("search");
 
         function preview(text) {
-            return text.substring(0, 220);
+            return "";
         }
 
         function render(list) {
