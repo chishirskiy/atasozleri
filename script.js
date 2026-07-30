@@ -1,22 +1,48 @@
+const container = document.getElementById("quotes");
+
 fetch("quotes.json")
-.then(r=>r.json())
-.then(data=>{
+    .then(response => response.json())
+    .then(quotes => {
 
-const container=document.getElementById("quotes");
+        container.innerHTML = "";
 
-data.forEach(item=>{
+        quotes.forEach((quote, index) => {
 
-const div=document.createElement("div");
+            const card = document.createElement("div");
+            card.className = "quote-card";
 
-div.className = "quote-card";
+            card.innerHTML = `
+                <h3>📖 ${quote.title}</h3>
 
-div.innerHTML=`
-<h3>${item.text}</h3>
-<p>${item.date}</p>
-`;
+                <p class="text">${quote.text}</p>
 
-container.appendChild(div);
+                <div class="info">
+                    <span>👤 ${quote.author}</span>
+                    <span>📅 ${quote.date}</span>
+                </div>
 
-});
+                <button class="reflection-btn">
+                    ❤️ Эта мысль помогла мне
+                </button>
 
-});
+                <div class="reflection">
+                    ${quote.reflection}
+                </div>
+            `;
+
+            container.appendChild(card);
+
+            setTimeout(() => {
+                card.classList.add("show");
+            }, index * 150);
+
+            const button = card.querySelector(".reflection-btn");
+            const reflection = card.querySelector(".reflection");
+
+            button.addEventListener("click", () => {
+                reflection.classList.toggle("open");
+            });
+
+        });
+
+    });
