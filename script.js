@@ -76,12 +76,21 @@ fetch("quotes.json")
 
         }
 
-        window.showQuote = function(index) {
-            alert(
-                data[index].title +
-                "\n\n" +
-                data[index].text
+        window.showQuote = function(index){
+
+            document.getElementById("modalTitle").textContent =
+                data[index].title;
+
+            document.getElementById("modalText").textContent =
+                data[index].text;
+
+        const modal =
+            new bootstrap.Modal(
+                document.getElementById("quoteModal")
             );
+
+        modal.show();
+
         };
 
         render(data);
