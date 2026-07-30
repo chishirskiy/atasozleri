@@ -269,3 +269,25 @@ footer{
     filter:drop-shadow(0 0 25px rgba(59,130,246,.8));
     animation:float 4s ease-in-out infinite;
 }
+/* ===== МОДАЛЬНОЕ ОКНО ===== */
+
+.modal-content{
+    background:#111827 !important;
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 25px 70px rgba(0,0,0,.5);
+}
+
+.modal-title{
+    font-size:32px;
+    font-weight:700;
+}
+
+.modal-body{
+    color:#e5e7eb;
+}
+
+.modal-body p{
+    font-size:19px;
+    line-height:1.9;
+}
