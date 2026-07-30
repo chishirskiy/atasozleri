@@ -19,12 +19,12 @@
 
         <h1>Книга мудрости моего папы</h1>
 
-        <p class="quote">
-            «Некоторые люди оставляют наследство не вещами,
-            а словами.»
+        <p class="hero-text">
+            «Самое ценное наследство —
+            это мудрые слова, которые остаются с нами навсегда.»
         </p>
 
-        <a href="#book" class="button">
+        <a href="#library" class="button">
             📖 Открыть книгу
         </a>
 
@@ -32,42 +32,56 @@
 
 </header>
 
-<section class="intro">
+<section id="library">
 
-<h2>Папа...</h2>
+    <div class="top-panel">
 
-<p>
+        <input
+            type="text"
+            id="search"
+            placeholder="🔍 Найти мудрость..."
+        >
 
-Есть вещи, которые невозможно купить.
+        <div class="stats">
 
-Есть слова, которые невозможно забыть.
+            <div class="stat">
+                <span id="totalCount">0</span>
+                <small>Всего</small>
+            </div>
 
-Каждая история,
-каждая пословица,
-каждый совет,
-который ты мне говорил,
-навсегда останется со мной.
+            <div class="stat">
+                <span id="favoriteCount">0</span>
+                <small>Избранных</small>
+            </div>
 
-Этот сайт —
-маленькая благодарность
-за всё,
-чему ты меня научил.
+        </div>
 
-Спасибо тебе.
+        <button id="randomBtn">
+            🎲 Случайная мудрость
+        </button>
 
-❤️
+    </div>
 
-</p>
+    <div id="featured"></div>
+
+    <div id="quotes"></div>
 
 </section>
 
-<section id="book">
+<footer>
 
-<h2>📚 Книга мудрости</h2>
+    <p>
 
-<div id="quotes"></div>
+        ❤️
 
-</section>
+        Спасибо тебе, папа.
+
+        Этот сайт будет пополняться,
+        пока я помню твои слова.
+
+    </p>
+
+</footer>
 
 <script src="script.js"></script>
 
