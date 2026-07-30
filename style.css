@@ -250,3 +250,22 @@ footer{
     }
 
 }
+/* ===== HERO TITLE ===== */
+
+.hero-title{
+    font-size:64px;
+    font-weight:700;
+    color:#ffffff;
+    margin-bottom:20px;
+    line-height:1.1;
+    text-shadow:
+        0 0 20px rgba(59,130,246,.45),
+        0 0 60px rgba(59,130,246,.18);
+}
+
+.butterfly{
+    font-size:90px;
+    margin-bottom:15px;
+    filter:drop-shadow(0 0 25px rgba(59,130,246,.8));
+    animation:float 4s ease-in-out infinite;
+}
