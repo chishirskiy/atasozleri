@@ -8,7 +8,7 @@ data.forEach(item=>{
 
 const div=document.createElement("div");
 
-div.className="quote";
+div.className = "quote-card";
 
 div.innerHTML=`
 <h3>${item.text}</h3>
