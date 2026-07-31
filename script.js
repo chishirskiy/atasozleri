@@ -108,3 +108,42 @@ fetch("quotes.json")
         });
 
     });
+// ===========================
+// Открытие книги
+// ===========================
+
+const openBookBtn = document.getElementById("openBook");
+const book = document.getElementById("book");
+
+openBookBtn.addEventListener("click", () => {
+
+    // скрываем кнопку
+    openBookBtn.style.display = "none";
+
+    // показываем книгу
+    book.style.display = "block";
+
+    // плавное появление
+    book.animate(
+        [
+            {
+                opacity: 0,
+                transform: "translateY(40px)"
+            },
+            {
+                opacity: 1,
+                transform: "translateY(0)"
+            }
+        ],
+        {
+            duration: 700,
+            easing: "ease-out"
+        }
+    );
+
+    // плавно прокручиваем к книге
+    book.scrollIntoView({
+        behavior: "smooth"
+    });
+
+});
