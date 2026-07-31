@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Книга мудрости моего папы</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -13,97 +11,97 @@
 
 <body>
 
-<div class="container py-5">
+<!-- ОБЛОЖКА -->
 
-    <!-- Верхняя часть -->
+<section id="hero" class="hero-screen">
 
-    <div class="hero-box text-center mb-5">
+    <div class="hero-content">
 
-        <div class="butterfly">
-            🦋
-        </div>
+        <div class="butterfly">🦋</div>
 
         <h1 class="hero-title">
-            Книга мудрости моего папы
+            Книга мудрости<br>моего папы
         </h1>
 
         <p class="hero-subtitle">
             Этот сайт создан с любовью.
             <br>
-            Здесь собраны слова, которые помогали мне становиться сильнее.
+            Здесь собраны слова,
+            которые помогали мне становиться сильнее.
         </p>
 
-        <button id="openBook" class="btn btn-primary btn-lg mt-4">
+        <button id="openBook" class="btn btn-primary btn-lg">
             📖 Открыть книгу
         </button>
-        
-        <div id="book" style="display:none;">
 
-    <!-- Поиск -->
+    </div>
 
-    <input
-        id="search"
-        class="form-control form-control-lg mb-4"
-        placeholder="🔍 Найти мудрость..."
-    >
+</section>
 
-    <!-- Главная мудрость -->
+<!-- КНИГА -->
 
-    <div id="featured" class="mb-5"></div>
+<section id="book" style="display:none;">
 
-    <!-- Остальные -->
+<div class="container py-5">
+
+<input
+id="search"
+class="form-control form-control-lg mb-4"
+placeholder="🔍 Найти мудрость...">
+
+<div id="featured" class="mb-5"></div>
 
 <div id="quotes" class="row g-4"></div>
 
-</div>   <!-- конец книги -->
+</div>
 
-</div>   <!-- container -->
-    
+</section>
+
 <!-- Модальное окно -->
 
 <div class="modal fade" id="quoteModal" tabindex="-1">
 
-    <div class="modal-dialog modal-lg modal-dialog-centered">
+<div class="modal-dialog modal-lg modal-dialog-centered">
 
-        <div class="modal-content bg-dark text-light border-secondary">
+<div class="modal-content bg-dark text-light">
 
-            <div class="modal-header border-secondary">
+<div class="modal-header">
 
-                <h3 class="modal-title" id="modalTitle"></h3>
+<h3 id="modalTitle"></h3>
 
-                <button
-                    class="btn-close btn-close-white"
-                    data-bs-dismiss="modal">
-                </button>
+<button
+class="btn-close btn-close-white"
+data-bs-dismiss="modal">
+</button>
 
-            </div>
+</div>
 
-            <div class="modal-body">
+<div class="modal-body">
 
-                <p id="modalText" style="white-space:pre-line;font-size:18px;line-height:1.8;"></p>
+<p id="modalText"
+style="white-space:pre-line;line-height:1.8;"></p>
 
-            </div>
+</div>
 
-            <div class="modal-footer border-secondary">
+<div class="modal-footer">
 
-                <button
-                    class="btn btn-primary"
-                    data-bs-dismiss="modal">
+<button
+class="btn btn-primary"
+data-bs-dismiss="modal">
 
-                    Закрыть
+Закрыть
 
-                </button>
+</button>
 
-            </div>
+</div>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-    
 <script src="script.js"></script>
 
 </body>
