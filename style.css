@@ -32,25 +32,7 @@ body{
     min-height:100vh;
 }
 
-/* ===========================
-   HERO
-=========================== */
 
-
-
-.hero h1{
-    font-size:4rem;
-    font-weight:700;
-    margin-bottom:20px;
-}
-
-.hero p{
-    font-size:1.3rem;
-    color:var(--muted);
-    max-width:700px;
-    margin:auto;
-    margin-bottom:40px;
-}
 
 .display-1{
     animation:float 4s ease-in-out infinite;
@@ -215,23 +197,23 @@ footer{
    АДАПТАЦИЯ
 =========================== */
 
-@media(max-width:768px){
+@media (max-width:768px){
 
-    .hero{
-        min-height:80vh;
-        padding:60px 20px;
+    .hero-screen{
+        min-height:100vh;
+        padding:30px 20px;
     }
 
-    .hero h1{
-        font-size:2.4rem;
+    .hero-title{
+        font-size:46px;
     }
 
-    .hero p{
-        font-size:1rem;
+    .hero-subtitle{
+        font-size:18px;
     }
 
-    .display-1{
-        font-size:4rem;
+    .butterfly{
+        font-size:70px;
     }
 
     .btn-lg{
@@ -318,4 +300,24 @@ footer{
     margin-bottom:20px;
     filter:drop-shadow(0 0 25px rgba(59,130,246,.7));
     animation:float 4s ease-in-out infinite;
+}
+.hero-subtitle{
+    font-size:22px;
+    color:#d1d5db;
+    margin-bottom:40px;
+    line-height:1.8;
+    max-width:700px;
+    margin-left:auto;
+    margin-right:auto;
+}
+#openBook{
+    padding:16px 55px;
+    font-size:22px;
+    border-radius:16px;
+    transition:.3s;
+}
+
+#openBook:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 30px rgba(59,130,246,.5);
 }
