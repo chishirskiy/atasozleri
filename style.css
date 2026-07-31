@@ -36,14 +36,7 @@ body{
    HERO
 =========================== */
 
-.hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:40px 20px;
-}
+
 
 .hero h1{
     font-size:4rem;
@@ -252,16 +245,7 @@ footer{
 }
 /* ===== HERO TITLE ===== */
 
-.hero-title{
-    font-size:64px;
-    font-weight:700;
-    color:#ffffff;
-    margin-bottom:20px;
-    line-height:1.1;
-    text-shadow:
-        0 0 20px rgba(59,130,246,.45),
-        0 0 60px rgba(59,130,246,.18);
-}
+
 
 .butterfly{
     font-size:90px;
@@ -297,4 +281,54 @@ footer{
 
 #book{
     display:none;
+}
+/* ===========================================
+   НОВАЯ ОБЛОЖКА
+=========================================== */
+
+.hero-screen{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px 20px;
+}
+
+.hero-content{
+    max-width:850px;
+    width:100%;
+    margin:0 auto;
+}
+
+.hero-title{
+    font-size:72px;
+    font-weight:700;
+    line-height:1.1;
+    color:#fff;
+    margin-bottom:25px;
+
+    text-shadow:
+        0 0 20px rgba(59,130,246,.45),
+        0 0 60px rgba(59,130,246,.18);
+}
+
+.hero-subtitle{
+    font-size:22px;
+    color:#cbd5e1;
+    margin-bottom:40px;
+    line-height:1.8;
+}
+
+.butterfly{
+    font-size:90px;
+    margin-bottom:20px;
+    filter:drop-shadow(0 0 25px rgba(59,130,246,.7));
+    animation:float 4s ease-in-out infinite;
+}
+
+#openBook{
+    padding:16px 55px;
+    font-size:22px;
+    border-radius:16px;
 }
