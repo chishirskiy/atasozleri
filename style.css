@@ -321,22 +321,17 @@ footer{
     transform:translateY(-5px);
     box-shadow:0 0 30px rgba(59,130,246,.5);
 }
-/* ===== ДАТА В МОДАЛЬНОМ ОКНЕ ===== */
+/* ===== ДАТА В ПОДВАЛЕ МОДАЛЬНОГО ОКНА ===== */
 
-.wisdom-meta{
-    display:flex;
+.modal-footer{
+    display:flex !important;
+    justify-content:space-between !important;
     align-items:center;
-    gap:8px;
-
-    margin-top:20px;
-    padding-top:16px;
-
-    border-top:1px solid rgba(255,255,255,.12);
-
-    color:#9ca3af;
-    font-size:15px;
 }
 
-.wisdom-meta span:first-child{
-    font-size:18px;
+.wisdom-date{
+    color:#9ca3af;
+    font-size:15px;
+    font-weight:500;
+    margin-right:auto;
 }
