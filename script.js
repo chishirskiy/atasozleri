@@ -81,6 +81,24 @@ fetch("quotes.json")
 
             document.getElementById("modalTitle").textContent =
                 data[index].title;
+            
+            const copyBtn = document.getElementById("copyQuote");
+
+            copyBtn.onclick = () => {
+
+                navigator.clipboard.writeText(
+                    data[index].title +
+                    "\n\n" +
+                    data[index].text
+                );
+
+                copyBtn.innerHTML = "✅ Скопировано";
+
+                setTimeout(() => {
+                    copyBtn.innerHTML = "📋 Копировать";
+                }, 2000);
+
+            };
 
             document.getElementById("modalText").textContent =
                 data[index].text;
