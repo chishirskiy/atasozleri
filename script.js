@@ -5,6 +5,7 @@ fetch("quotes.json")
         const featured = document.getElementById("featured");
         const quotes = document.getElementById("quotes");
         const search = document.getElementById("search");
+        const randomBtn = document.getElementById("randomQuote");
 
         function preview(text) {
             return "";
