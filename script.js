@@ -98,6 +98,14 @@ fetch("quotes.json")
 
         
         render(data);
+        
+        randomBtn.addEventListener("click", () => {
+
+            const randomIndex = Math.floor(Math.random() * data.length);
+
+            showQuote(randomIndex);
+
+        });
 
         search.addEventListener("input", function () {
 
