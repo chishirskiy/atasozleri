@@ -325,13 +325,17 @@ footer{
 
 .modal-footer{
     display:flex !important;
-    justify-content:space-between !important;
-    align-items:center;
+    align-items:center !important;
 }
 
 .wisdom-date{
+    flex:1;
+    text-align:left;
     color:#9ca3af;
     font-size:15px;
     font-weight:500;
-    margin-right:auto;
+}
+
+.modal-footer .btn{
+    margin-left:auto;
 }
