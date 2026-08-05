@@ -103,7 +103,7 @@ fetch("quotes.json")
 
             const randomIndex = Math.floor(Math.random() * data.length);
 
-            showQuote(randomIndex);
+            window.showQuote(randomIndex);
 
         });
 
