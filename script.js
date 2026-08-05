@@ -186,9 +186,9 @@ openBookBtn.addEventListener("click", () => {
         }
     );
 
-    //book.scrollIntoView({
-        //behavior: "smooth"
-    //});
+    book.scrollIntoView({
+        behavior: "smooth"
+    });
 
 });
 
