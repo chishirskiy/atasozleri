@@ -83,6 +83,9 @@ fetch("quotes.json")
             document.getElementById("modalText").textContent =
                 data[index].text;
 
+            document.getElementById("wisdomDate").textContent =
+                "Дата добавления: " + (data[index].date || "Не указана");
+
         const modal =
             new bootstrap.Modal(
                 document.getElementById("quoteModal")
