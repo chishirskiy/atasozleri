@@ -6,6 +6,7 @@ fetch("quotes.json")
         const quotes = document.getElementById("quotes");
         const search = document.getElementById("search");
         const randomBtn = document.getElementById("randomQuote");
+        const dailyBtn = document.getElementById("dailyQuote");
 
         function preview(text) {
             return "";
@@ -104,6 +105,20 @@ fetch("quotes.json")
             const randomIndex = Math.floor(Math.random() * data.length);
 
             window.showQuote(randomIndex);
+
+        });
+
+        dailyBtn.addEventListener("click", () => {
+
+            const today = new Date();
+
+            // Номер текущего дня
+            const dayNumber = Math.floor(today.getTime() / 86400000);
+
+            // Каждый день выбирается одна и та же мудрость
+            const index = dayNumber % data.length;
+
+            window.showQuote(index);
 
         });
 
