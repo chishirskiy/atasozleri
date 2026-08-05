@@ -89,13 +89,9 @@ fetch("quotes.json")
             const modal =
                 new bootstrap.Modal(
                     document.getElementById("quoteModal")
-            );
+        );
 
             modal.show();
-
-        };
-
-        modal.show();
 
         };
 
