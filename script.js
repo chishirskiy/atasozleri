@@ -9,7 +9,9 @@ fetch("quotes.json")
         const dailyBtn = document.getElementById("dailyQuote");
 
         function preview(text) {
-            return "";
+            if (text.length <= 180) return text;
+
+            return text.substring(0, 180) + "...";
         }
 
         function render(list) {
