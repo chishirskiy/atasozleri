@@ -163,16 +163,32 @@ fetch("quotes.json")
 const openBookBtn = document.getElementById("openBook");
 const book = document.getElementById("book");
 
-const hero = document.getElementById("hero");
+openBookBtn.addEventListener("click", () => {
 
-openBookBtn.addEventListener("click", (e) => {
+    openBookBtn.style.display = "none";
 
-    e.preventDefault();
-
-    hero.style.display = "none";
     book.style.display = "block";
 
-    window.scrollTo(0, 0);
+    book.animate(
+        [
+            {
+                opacity: 0,
+                transform: "translateY(40px)"
+            },
+            {
+                opacity: 1,
+                transform: "translateY(0)"
+            }
+        ],
+        {
+            duration: 700,
+            easing: "ease-out"
+        }
+    );
+
+    book.scrollIntoView({
+        behavior: "smooth"
+    });
 
 });
 
