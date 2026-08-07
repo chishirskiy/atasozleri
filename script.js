@@ -179,7 +179,7 @@ fetch("quotes.json")
                 )
             );
 
-            render(data);
+            applyFilters();
 
         };
 
