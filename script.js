@@ -1,4 +1,4 @@
-fetch("quotes.json")
+fetch("quotes.json?v=2")
     .then(res => res.json())
     .then(data => {
 
