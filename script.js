@@ -208,6 +208,32 @@ fetch("quotes.json")
 
         });
 
+        favoriteFilterBtn.addEventListener("click", () => {
+
+            favoritesOnly = !favoritesOnly;
+
+            if (favoritesOnly) {
+    
+                favoriteFilterBtn.innerHTML = "⭐ Показать все";
+
+                favoriteFilterBtn.classList.remove("btn-outline-warning");
+                favoriteFilterBtn.classList.add("btn-warning");
+
+        } else {
+
+            favoriteFilterBtn.innerHTML = "⭐ Только избранные";
+
+            favoriteFilterBtn.classList.remove("btn-warning");
+            favoriteFilterBtn.classList.add("btn-outline-warning");
+
+        }
+
+        applyFilters();
+
+        });
+
+        
+
         search.addEventListener("input", function () {
 
             const value = this.value.toLowerCase();
