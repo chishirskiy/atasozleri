@@ -7,6 +7,8 @@ fetch("quotes.json")
         const search = document.getElementById("search");
         const randomBtn = document.getElementById("randomQuote");
         const dailyBtn = document.getElementById("dailyQuote");
+        const favoriteFilterBtn = document.getElementById("favoriteFilter");
+        let favoritesOnly = false;
         const savedFavorites = JSON.parse(
             localStorage.getItem("favorites") || "[]"
         );
@@ -24,6 +26,7 @@ fetch("quotes.json")
         function render(list) {
 
             quotes.innerHTML = "";
+            featured.innerHTML = "";
 
             if (list.length === 0) {
                 quotes.innerHTML = `
@@ -235,16 +238,7 @@ fetch("quotes.json")
         
 
         search.addEventListener("input", function () {
-
-            const value = this.value.toLowerCase();
-
-            const filtered = data.filter(q =>
-                q.title.toLowerCase().includes(value) ||
-                q.text.toLowerCase().includes(value)
-            );
-
-            render(filtered);
-
+            applyFilters();
         });
 
     });
