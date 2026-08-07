@@ -70,33 +70,47 @@ fetch("quotes.json")
     `;
 
             // Остальные карточки
-            list.slice(1).forEach((quote, index) => {
+            list.slice(1).forEach((quote) => {
+
+                const realIndex = data.indexOf(quote);
 
                 quotes.innerHTML += `
                     <div class="col-md-6">
 
                         <div class="card p-4 h-100">
 
-                            <h4>${quote.title}</h4>
-
-                            <p>
-                                ${preview(quote.text)}
-                            </p>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+    
+                                <h4 class="mb-0">${quote.title}</h4>
 
                             <button
-                                class="btn btn-outline-light mt-auto"
-                                onclick="showQuote(${index + 1})">
+                                class="favorite-btn btn btn-sm ${quote.favorite ? "btn-warning" : "btn-outline-warning"}"
+                                onclick="toggleFavorite(${realIndex})">
 
-                                Читать полностью →
+                                ⭐
 
                             </button>
 
                         </div>
 
-                    </div>
-                `;
+                        <p>
+                            ${preview(quote.text)}
+                        </p>
 
-            });
+                        <button
+                            class="btn btn-outline-light mt-auto"
+                            onclick="showQuote(${realIndex})">
+
+                            Читать полностью →
+
+                        </button>
+
+                    </div>
+
+                </div>
+            `;
+
+        });
 
         }
 
