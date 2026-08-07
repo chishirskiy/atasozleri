@@ -114,6 +114,22 @@ fetch("quotes.json")
 
         }
 
+        function applyFilters() {
+
+            const value = search.value.toLowerCase();
+
+            let filtered = data.filter(q =>
+                q.title.toLowerCase().includes(value) ||
+                q.text.toLowerCase().includes(value)
+            );
+
+            if (favoritesOnly) {
+                filtered = filtered.filter(q => q.favorite);
+            }
+
+            render(filtered);
+        }
+
         window.showQuote = function(index){
 
             document.getElementById("modalTitle").textContent =
