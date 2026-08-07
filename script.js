@@ -7,6 +7,13 @@ fetch("quotes.json")
         const search = document.getElementById("search");
         const randomBtn = document.getElementById("randomQuote");
         const dailyBtn = document.getElementById("dailyQuote");
+        const savedFavorites = JSON.parse(
+            localStorage.getItem("favorites") || "[]"
+        );
+
+        data.forEach((quote, index) => {
+            quote.favorite = savedFavorites[index] || false;
+        });
 
         function preview(text) {
             if (text.length <= 180) return text;
@@ -28,25 +35,39 @@ fetch("quotes.json")
             }
 
             // Главная карточка
-            featured.innerHTML = `
-                <div class="card p-4">
-                    <span class="badge bg-warning text-dark mb-3">
-                        🌟 Главная мудрость
-                    </span>
+        featured.innerHTML = `
+            <div class="card p-4">
 
-                    <h2>${list[0].title}</h2>
+                <span class="badge bg-warning text-dark mb-3">
+                    🌟 Главная мудрость
+                </span>
 
-                    <p>
-                        ${preview(list[0].text)}
-                    </p>
+                <div class="d-flex justify-content-between align-items-center mb-2">
 
-                    <button
-                        class="btn btn-primary mt-3"
-                        onclick="showQuote(${0})">
-                        📖 Читать полностью
-                    </button>
-                </div>
-            `;
+                <h2 class="mb-0">${list[0].title}</h2>
+    
+                <button
+                    class="favorite-btn btn ${list[0].favorite ? "btn-warning" : "btn-outline-warning"}"
+                    onclick="toggleFavorite(${data.indexOf(list[0])})">
+
+                    ⭐
+
+                </button>
+
+            </div>
+
+            <p>
+                ${preview(list[0].text)}
+            </p>
+
+            <button
+                class="btn btn-primary mt-3"
+                onclick="showQuote(${data.indexOf(list[0])})">
+                📖 Читать полностью
+            </button>
+
+        </div>
+    `;
 
             // Остальные карточки
             list.slice(1).forEach((quote, index) => {
