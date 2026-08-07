@@ -152,6 +152,21 @@ fetch("quotes.json")
 
         };
 
+        window.toggleFavorite = function(index){
+
+            data[index].favorite = !data[index].favorite;
+
+            localStorage.setItem(
+                "favorites",
+                JSON.stringify(
+                    data.map(q => q.favorite)
+                )
+            );
+
+            render(data);
+
+        };
+
         
         render(data);
         
