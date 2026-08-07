@@ -369,3 +369,16 @@ footer{
 #copyQuote:hover{
     transform:translateY(-2px);
 }
+.favorite-btn{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:.3s;
+}
+
+.favorite-btn:hover{
+    transform:scale(1.12);
+}
