@@ -186,7 +186,7 @@
             }
 
             window.showQuote(currentQuoteIndex);
-
+    
         });
 
         nextBtn.addEventListener("click", () => {
