@@ -134,6 +134,8 @@ fetch("quotes.json?v=2")
 
             render(filtered);
         }
+        
+        let currentQuoteIndex = 0;
 
         window.showQuote = function(index){
 
