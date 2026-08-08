@@ -168,14 +168,13 @@
             document.getElementById("wisdomDate").innerHTML =
                 `📅 <strong>${data[index].date || "Не указана"}</strong>`;
 
-            const modal =
-                new bootstrap.Modal(
+            const modal = new bootstrap.Modal(
                     document.getElementById("quoteModal")
-                );
+            );
 
-        modal.show();
+            modal.show();
 
-        };
+            };
 
         prevBtn.addEventListener("click", () => {
 
