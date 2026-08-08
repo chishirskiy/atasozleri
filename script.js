@@ -1,4 +1,4 @@
-    fetch("quotes.json?v=2.1")
+        fetch("quotes.json?v=2.1")
     .then(res => res.json())
     .then(data => {
 
@@ -136,6 +136,41 @@
         }
         
         let currentQuoteIndex = 0;
+
+        const modalElement = document.getElementById("quoteModal");
+        const quoteModal = bootstrap.Modal.getOrCreateInstance(modalElement);
+
+        function updateQuote(index) {
+
+            currentQuoteIndex = index;
+
+            document.getElementById("modalTitle").textContent =
+                data[index].title;
+
+            document.getElementById("modalText").textContent =
+                data[index].text;
+
+            document.getElementById("wisdomDate").innerHTML =
+                `📅 <strong>${data[index].date || "Не указана"}</strong>`;
+
+            const copyBtn = document.getElementById("copyQuote");
+
+            copyBtn.onclick = () => {
+
+                navigator.clipboard.writeText(
+                    data[index].title +
+                    "\n\n" +
+                    data[index].text
+                );
+
+                copyBtn.innerHTML = "✅ Скопировано";
+
+                setTimeout(() => {
+                    copyBtn.innerHTML = "📋 Копировать";
+                }, 2000);
+
+            };
+        }
 
         window.showQuote = function(index){
 
