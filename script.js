@@ -149,7 +149,7 @@
 
             document.getElementById("modalText").textContent =
                 data[index].text;
-
+        
             document.getElementById("wisdomDate").innerHTML =
                 `📅 <strong>${data[index].date || "Не указана"}</strong>`;
 
@@ -172,40 +172,13 @@
             };
         }
 
-        window.showQuote = function(index){
+        window.showQuote = function(index) {
 
-            currentQuoteIndex = index;
+            updateQuote(index);
 
-            document.getElementById("modalTitle").textContent =
-                data[index].title;
-            
-            const copyBtn = document.getElementById("copyQuote");
+            quoteModal.show();
 
-            copyBtn.onclick = () => {
-
-                navigator.clipboard.writeText(
-                    data[index].title +
-                    "\n\n" +
-                    data[index].text
-                );
-
-                copyBtn.innerHTML = "✅ Скопировано";
-
-                setTimeout(() => {
-                    copyBtn.innerHTML = "📋 Копировать";
-                }, 2000);
-
-            };
-
-            document.getElementById("modalText").textContent =
-                data[index].text;
-
-            document.getElementById("wisdomDate").innerHTML =
-                `📅 <strong>${data[index].date || "Не указана"}</strong>`;
-
-
-
-            };
+        };
 
         prevBtn.addEventListener("click", () => {
 
@@ -218,7 +191,7 @@
             updateQuote(currentQuoteIndex);
 
         });
-        
+
         nextBtn.addEventListener("click", () => {
 
             currentQuoteIndex++;
@@ -230,7 +203,6 @@
             updateQuote(currentQuoteIndex);
 
         });
-
 
         window.toggleFavorite = function(index){
 
