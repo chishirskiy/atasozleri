@@ -215,10 +215,10 @@
                 currentQuoteIndex = data.length - 1;
             }
 
-            window.showQuote(currentQuoteIndex);
-    
-        });
+            updateQuote(currentQuoteIndex);
 
+        });
+        
         nextBtn.addEventListener("click", () => {
 
             currentQuoteIndex++;
@@ -227,7 +227,7 @@
                 currentQuoteIndex = 0;
             }
 
-            window.showQuote(currentQuoteIndex);
+            updateQuote(currentQuoteIndex);
 
         });
 
