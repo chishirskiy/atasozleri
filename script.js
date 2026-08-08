@@ -1,4 +1,4 @@
-fetch("quotes.json?v=2")
+    fetch("quotes.json?v=2")
     .then(res => res.json())
     .then(data => {
 
@@ -139,6 +139,8 @@ fetch("quotes.json?v=2")
 
         window.showQuote = function(index){
 
+            currentQuoteIndex = index;
+
             document.getElementById("modalTitle").textContent =
                 data[index].title;
             
@@ -174,6 +176,31 @@ fetch("quotes.json?v=2")
         modal.show();
 
         };
+
+        prevBtn.addEventListener("click", () => {
+
+            currentQuoteIndex--;
+
+            if (currentQuoteIndex < 0) {
+                currentQuoteIndex = data.length - 1;
+            }
+
+            window.showQuote(currentQuoteIndex);
+
+        });
+
+        nextBtn.addEventListener("click", () => {
+
+            currentQuoteIndex++;
+
+            if (currentQuoteIndex >= data.length) {
+                currentQuoteIndex = 0;
+            }
+
+            window.showQuote(currentQuoteIndex);
+
+        });
+
 
         window.toggleFavorite = function(index){
 
