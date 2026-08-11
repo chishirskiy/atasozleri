@@ -252,11 +252,12 @@
                 )
             );
 
+            updateStats();    
             applyFilters();
 
         };
 
-        
+        updateStats();
         render(data);
         
         randomBtn.addEventListener("click", () => {
