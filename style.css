@@ -382,3 +382,37 @@ footer{
 .favorite-btn:hover{
     transform:scale(1.12);
 }
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:15px;
+}
+
+.stat-card{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    padding:20px;
+    text-align:center;
+    backdrop-filter:blur(10px);
+}
+
+.stat-number{
+    font-size:28px;
+    font-weight:700;
+    color:#facc15;
+    margin-bottom:6px;
+}
+
+.stat-label{
+    color:#cbd5e1;
+    font-size:14px;
+}
+
+@media (max-width:768px){
+
+    .stats-grid{
+        grid-template-columns:1fr;
+    }
+
+}
