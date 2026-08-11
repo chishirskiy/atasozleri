@@ -7,6 +7,7 @@
         const search = document.getElementById("search");
         const randomBtn = document.getElementById("randomQuote");
         const dailyBtn = document.getElementById("dailyQuote");
+        const stats = document.getElementById("stats");    
         const prevBtn = document.getElementById("prevQuote");
         const nextBtn = document.getElementById("nextQuote");
         const favoriteFilterBtn = document.getElementById("favoriteFilter");
@@ -18,6 +19,42 @@
         data.forEach((quote, index) => {
             quote.favorite = savedFavorites[index] || false;
         });
+
+        function updateStats() {
+
+                const favoritesCount =
+                        data.filter(q => q.favorite).length;
+
+                const lastQuote =
+                        [...data].sort((a, b) => {
+
+                            const [dayA, monthA, yearA] = a.date.split(".");
+                            const [dayB, monthB, yearB] = b.date.split(".");
+
+                            const dateA = new Date(yearA, monthA - 1, dayA);
+                            const dateB = new Date(yearB, monthB - 1, dayB);
+
+                            return dateB - dateA;
+
+                        })[0];
+
+                    stats.innerHTML = `
+                        <div class="stat-card">
+                            <div class="stat-number">${data.length}</div>
+                            <div class="stat-label">📚 Всего мудростей</div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-number">${favoritesCount}</div>
+                            <div class="stat-label">⭐ Избранных</div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-number">${lastQuote.date}</div>
+                            <div class="stat-label">🆕 Последняя добавлена</div>
+                        </div>
+                    `;
+                }    
 
         function preview(text) {
             if (text.length <= 180) return text;
