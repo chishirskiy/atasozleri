@@ -14,6 +14,10 @@
         let favoritesOnly = false;
         const savedFavorites = JSON.parse(
             localStorage.getItem("favorites") || "[]"
+        const ratingStars =
+                    document.querySelectorAll("#ratingStars button");
+        const ratingText =
+                    document.getElementById("ratingText");
         );
 
         data.forEach((quote, index) => {
@@ -177,9 +181,35 @@
         const modalElement = document.getElementById("quoteModal");
         const quoteModal = bootstrap.Modal.getOrCreateInstance(modalElement);
 
+        function getRatings() {
+            return JSON.parse(
+                localStorage.getItem("quoteRatings") || "{}"
+            );
+        }
+
+        function showRating(index) {
+
+            const ratings = getRatings();
+            const rating = ratings[index] || 0;
+
+            ratingStars.forEach(star => {
+
+                const value = Number(star.dataset.rating);
+
+                star.textContent =
+                    value <= rating ? "★" : "☆";
+
+            });
+
+            ratingText.textContent =
+                rating ? `${rating} из 5` : "Оценка не поставлена";
+        }
+
+
         function updateQuote(index) {
 
-            currentQuoteIndex = index;
+                currentQuoteIndex = index;
+                showRating(index);        
 
             document.getElementById("modalTitle").textContent =
                 data[index].title;
@@ -208,6 +238,28 @@
 
             };
         }
+
+        ratingStars.forEach(star => {
+
+            star.addEventListener("click", () => {
+
+                const rating =
+                    Number(star.dataset.rating);
+
+                const ratings = getRatings();
+
+                ratings[currentQuoteIndex] = rating;
+
+                localStorage.setItem(
+                    "quoteRatings",
+                    JSON.stringify(ratings)
+                );
+
+                showRating(currentQuoteIndex);
+
+            });
+
+        });
 
         window.showQuote = function(index) {
 
