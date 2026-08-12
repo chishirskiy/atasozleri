@@ -417,42 +417,58 @@ footer{
 
 }
 /* ===========================
-   ОЦЕНКА МУДРОСТИ
+   РЕЙТИНГ МУДРОСТИ
 =========================== */
 
 .quote-rating{
-    margin-top:20px;
+    margin-top:22px;
     padding-top:18px;
-    border-top:1px solid rgba(255,255,255,.1);
+    border-top:1px solid rgba(255,255,255,.10);
 }
 
 .rating-title{
     color:#cbd5e1;
     font-size:14px;
+    font-weight:600;
     margin-bottom:8px;
 }
 
 .rating-stars{
     display:flex;
-    gap:5px;
+    align-items:center;
+    gap:6px;
 }
 
 .rating-stars button{
-    background:none;
-    border:none;
+    appearance:none;
+    -webkit-appearance:none;
+
+    background:transparent !important;
+    border:none !important;
+    outline:none !important;
+
+    padding:0;
+    margin:0;
+
     color:#facc15;
-    font-size:30px;
+    font-size:32px;
+    line-height:1;
+
     cursor:pointer;
-    padding:0 2px;
     transition:.2s;
 }
 
 .rating-stars button:hover{
-    transform:scale(1.2);
+    transform:scale(1.18);
+}
+
+.rating-stars button:focus{
+    outline:none;
+    box-shadow:none;
 }
 
 .rating-text{
+    margin-top:8px;
     color:#94a3b8;
     font-size:13px;
-    margin-top:5px;
 }
