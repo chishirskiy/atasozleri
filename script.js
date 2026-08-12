@@ -7,17 +7,18 @@
         const search = document.getElementById("search");
         const randomBtn = document.getElementById("randomQuote");
         const dailyBtn = document.getElementById("dailyQuote");
-        const stats = document.getElementById("stats");    
+        const stats = document.getElementById("stats"); 
+        const ratingStars =
+            document.querySelectorAll("#ratingStars button");
+        const ratingText =
+            document.getElementById("ratingText");   
         const prevBtn = document.getElementById("prevQuote");
         const nextBtn = document.getElementById("nextQuote");
         const favoriteFilterBtn = document.getElementById("favoriteFilter");
         let favoritesOnly = false;
         const savedFavorites = JSON.parse(
             localStorage.getItem("favorites") || "[]"
-        const ratingStars =
-                    document.querySelectorAll("#ratingStars button");
-        const ratingText =
-                    document.getElementById("ratingText");
+
         );
 
         data.forEach((quote, index) => {
