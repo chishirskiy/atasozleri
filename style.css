@@ -416,3 +416,43 @@ footer{
     }
 
 }
+/* ===========================
+   ОЦЕНКА МУДРОСТИ
+=========================== */
+
+.quote-rating{
+    margin-top:20px;
+    padding-top:18px;
+    border-top:1px solid rgba(255,255,255,.1);
+}
+
+.rating-title{
+    color:#cbd5e1;
+    font-size:14px;
+    margin-bottom:8px;
+}
+
+.rating-stars{
+    display:flex;
+    gap:5px;
+}
+
+.rating-stars button{
+    background:none;
+    border:none;
+    color:#facc15;
+    font-size:30px;
+    cursor:pointer;
+    padding:0 2px;
+    transition:.2s;
+}
+
+.rating-stars button:hover{
+    transform:scale(1.2);
+}
+
+.rating-text{
+    color:#94a3b8;
+    font-size:13px;
+    margin-top:5px;
+}
