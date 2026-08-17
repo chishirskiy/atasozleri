@@ -8,6 +8,8 @@
         const randomBtn = document.getElementById("randomQuote");
         const dailyBtn = document.getElementById("dailyQuote");
         const stats = document.getElementById("stats"); 
+        const latestQuotes =
+            document.getElementById("latestQuotes");
         const shareBtn = document.getElementById("shareQuote");    
         const ratingStars =
             document.querySelectorAll("#ratingStars button");
