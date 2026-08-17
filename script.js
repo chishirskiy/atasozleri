@@ -8,6 +8,7 @@
         const randomBtn = document.getElementById("randomQuote");
         const dailyBtn = document.getElementById("dailyQuote");
         const stats = document.getElementById("stats"); 
+        const shareBtn = document.getElementById("shareQuote");    
         const ratingStars =
             document.querySelectorAll("#ratingStars button");
         const ratingText =
@@ -240,6 +241,37 @@
             };
         }
 
+        shareBtn.addEventListener("click", async () => {
+
+            const url =
+                `${window.location.origin}${window.location.pathname}?quote=${currentQuoteIndex}`;
+
+            if (navigator.share) {
+
+                try {
+                    await navigator.share({
+                        title: data[currentQuoteIndex].title,
+                        text: data[currentQuoteIndex].text,
+                        url: url
+                    });
+
+                } catch (error) {
+                    console.log("Поделиться отменено");
+                }
+
+            } else {
+
+                await navigator.clipboard.writeText(url);
+
+                shareBtn.innerHTML = "✅ Ссылка скопирована";
+
+                setTimeout(() => {
+                    shareBtn.innerHTML = "🔗 Поделиться";
+                }, 2000);
+            }
+
+        });
+
         ratingStars.forEach(star => {
 
             star.addEventListener("click", () => {
@@ -312,6 +344,22 @@
 
         updateStats();
         render(data);
+
+        const params = new URLSearchParams(window.location.search);
+        const quoteFromUrl = params.get("quote");
+
+        if (quoteFromUrl !== null) {
+
+            const index = Number(quoteFromUrl);
+
+            if (
+                Number.isInteger(index) &&
+                index >= 0 &&
+                index < data.length
+            ) {
+                window.showQuote(index);
+            }
+        }
         
         randomBtn.addEventListener("click", () => {
 
