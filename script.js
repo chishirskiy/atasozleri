@@ -62,7 +62,51 @@
                             <div class="stat-label">🆕 Последняя добавлена</div>
                         </div>
                     `;
-                }    
+                }
+
+        function renderLatest() {
+
+            const sorted = [...data].sort((a, b) => {
+
+                const [dayA, monthA, yearA] = a.date.split(".");
+                const [dayB, monthB, yearB] = b.date.split(".");
+
+                const dateA = new Date(yearA, monthA - 1, dayA);
+                const dateB = new Date(yearB, monthB - 1, dayB);
+
+                return dateB - dateA;
+
+            });
+
+            const latest = sorted.slice(0, 3);
+
+            latestQuotes.innerHTML = "";
+
+            latest.forEach(quote => {
+
+                const realIndex = data.indexOf(quote);
+
+                latestQuotes.innerHTML += `
+                    <div class="latest-card"
+                         onclick="showQuote(${realIndex})">
+
+                        <div class="latest-card-date">
+                            ${quote.date}
+                        </div>
+
+                        <div class="latest-card-title">
+                            ${quote.title}
+                        </div>
+        
+                        <div class="latest-card-arrow">
+                            Читать →
+                        </div>
+
+                    </div>
+                `;
+            });
+
+        }
 
         function preview(text) {
             if (text.length <= 180) return text;
@@ -345,6 +389,7 @@
         };
 
         updateStats();
+        renderLatest();
         render(data);
 
         const params = new URLSearchParams(window.location.search);
