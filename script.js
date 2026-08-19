@@ -64,6 +64,7 @@
                 );
 
                 updateReadingProgress();
+                applyFilters();
             }
         }        
         
@@ -231,6 +232,12 @@
                             </button>
 
                         </div>
+
+                        ${readQuotes[realIndex] ? `
+                            <div class="read-badge">
+                                ✓ Прочитано
+                            </div>
+                        ` : ""}
 
                         <p>
                             ${preview(quote.text)}
