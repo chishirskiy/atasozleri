@@ -8,6 +8,10 @@
         const randomBtn = document.getElementById("randomQuote");
         const dailyBtn = document.getElementById("dailyQuote");
         const stats = document.getElementById("stats"); 
+        const readingProgressText =
+            document.getElementById("readingProgressText");
+        const readingProgressFill =
+            document.getElementById("readingProgressFill");
         const latestQuotes =
             document.getElementById("latestQuotes");
         const shareBtn = document.getElementById("shareQuote");    
@@ -21,13 +25,48 @@
         let favoritesOnly = false;
         const savedFavorites = JSON.parse(
             localStorage.getItem("favorites") || "[]"
-
+        );
+        const readQuotes = JSON.parse(
+            localStorage.getItem("readQuotes") || "[]"
         );
 
         data.forEach((quote, index) => {
             quote.favorite = savedFavorites[index] || false;
         });
 
+        function updateReadingProgress() {
+
+            const readCount =
+                readQuotes.filter(Boolean).length;
+
+            const percent =
+                data.length > 0
+                    ? (readCount / data.length) * 100
+                    : 0;
+
+            readingProgressText.textContent =
+                `${readCount} из ${data.length}`;
+
+            readingProgressFill.style.width =
+                `${percent}%`;
+        }
+
+
+        function markAsRead(index) {
+
+            if (!readQuotes[index]) {
+
+                readQuotes[index] = true;
+
+                localStorage.setItem(
+                    "readQuotes",
+                    JSON.stringify(readQuotes)
+                );
+
+                updateReadingProgress();
+            }
+        }        
+        
         function updateStats() {
 
                 const favoritesCount =
@@ -257,6 +296,8 @@
         function updateQuote(index) {
 
                 currentQuoteIndex = index;
+
+                markAsRead(index);
                 showRating(index);        
 
             document.getElementById("modalTitle").textContent =
@@ -389,6 +430,7 @@
         };
 
         updateStats();
+        updateReadingProgress();
         renderLatest();
         render(data);
 
