@@ -1,4 +1,4 @@
-        fetch("quotes.json?v=2.2")
+        fetch("quotes.json?v=2.3")
     .then(res => res.json())
     .then(data => {
 
