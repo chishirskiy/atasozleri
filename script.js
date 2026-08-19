@@ -189,6 +189,12 @@
 
             </div>
 
+            ${readQuotes[data.indexOf(list[0])] ? `
+                    <div class="read-badge">
+                             ✓ Прочитано
+                    </div>
+            ` : ""}
+
             <p>
                 ${preview(list[0].text)}
             </p>
